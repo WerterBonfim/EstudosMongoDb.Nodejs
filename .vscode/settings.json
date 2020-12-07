@@ -1,0 +1,16 @@
+{
+    "git.enabled": true,
+    "files.exclude": {
+        "node_modules": true,
+        ".vscode": true,
+        ".gitignore": true,
+        "package.json": false,
+        "package-lock.json": true,
+        "yarn.lock": true,                
+        "tsconfig.json": true,                
+        ".eslintignore": true,
+        ".eslintrc.json": true,        
+        "prettier.config.js": true,        
+        "yarn-error.log": true
+    }
+}
