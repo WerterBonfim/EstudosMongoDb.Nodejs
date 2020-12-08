@@ -1,12 +1,16 @@
 {
     "root": true,
     "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
     "extends": [        
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
     ],        
     "rules": {        
+        // "@typescript-eslint/no-var-requires"
         // "@typescript-eslint/consistent-type-definitions": "off",
         // "@typescript-eslint/strict-boolean-expressions": "off"
     }
