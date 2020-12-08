@@ -4,7 +4,12 @@ describe('Teste Funcional MongoNode', () => {
     
     it('Deve retornar sucesso para o primeiro teste', async() => {
 
-        expect(1).toBe(1);
+        const { body, status } = await global.testRequest.get('/registro');
+
+        expect(status).toBe(200);
+        expect(body).toEqual({
+            sucesso: true
+        })
 
     });
 });
