@@ -1,11 +1,24 @@
 {
-    "compileOnSave": true,
+    "compileOnSave": true,    
     "compilerOptions": {
+        "moduleResolution": "Node",        
+        "module": "ESNext",        
+        "rootDir": "src",
+        "baseUrl": "src",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "noEmit": true
         
-        "module": "commonjs",
-        "outDir": "dist"
     },
+    "include": [
+        "src"
+    ],
     "exclude": [
         "node_modules"
     ]
+    
 }
