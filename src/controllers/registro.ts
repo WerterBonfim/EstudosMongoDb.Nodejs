@@ -1,15 +1,13 @@
-import { Controller, Get } from "@overnightjs/core";
 import { Request, Response } from "express";
 
+import { Controller, Get } from "@overnightjs/core";
 
-@Controller('registro')
+@Controller("registro")
 export class RegistroController {
-
-    @Get('')
+    @Get("")
     public getTeste(_: Request, res: Response): void {
         res.send({
-            sucesso: true
+            sucesso: true,
         });
     }
-
 }
