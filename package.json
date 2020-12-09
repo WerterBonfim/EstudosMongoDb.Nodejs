@@ -12,7 +12,8 @@
     "test": "jest",
     "test:functional": "jest --projects ./test --runInBand",
     "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
-    "style:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'"
+    "style:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
+    "debug": "ts-node-dev --inspect --transpile-only 'src/index.ts'"
   },
   "author": "Werter Bonfim",
   "license": "ISC",
