@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
       {
         "name": "Jest",
         "type": "node",
@@ -8,8 +9,7 @@
         "runtimeArgs": [
           "--inspect-brk",
           "${workspaceRoot}/node_modules/.bin/jest",
-          "--runInBand",
-          "--detectOpenHandles",
+          "--runInBand",          
           "--config",
           "${workspaceRoot}/src/configurations/jest.config.js"          
         ],

@@ -1,8 +1,10 @@
-import "./util/module-alias";
-import { Server } from "@overnightjs/core";
+import "@src/index";
 import bodyParser from "body-parser";
-import { RegistroController } from "./controllers/registro";
 import { Application } from "express";
+
+import { Server } from "@overnightjs/core";
+
+import { RegistroController } from "./controllers/registro";
 
 export class SetupServer extends Server {
     constructor(private port = 3000) {

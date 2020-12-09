@@ -1,1 +1,1 @@
-console.log("teste");
+import "@src/util/module-alias";

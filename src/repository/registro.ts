@@ -1,5 +1,7 @@
+import { json } from "body-parser";
 import { MongoClient } from "mongodb";
 
+import logger from "@src/configurations/logging-config";
 import { IResposta } from "@src/view-model/resposta";
 
 export class RegistroRepository {
@@ -10,7 +12,10 @@ export class RegistroRepository {
     }
 
     private async CriarConexao(): Promise<MongoClient> {
-        const mongoClient = new MongoClient(this._connectionString);
+        const mongoClient = new MongoClient(this._connectionString, {
+            useUnifiedTopology: true,
+            connectTimeoutMS: 2000,
+        });
 
         const client = await mongoClient.connect();
 
@@ -29,7 +34,8 @@ export class RegistroRepository {
             .collection("registros")
             .insertOne(registro);
 
-        console.log("result", result);
+        logger.info("Registro inserido com sucesso");
+        //logger.info("Inseriu um registro", JSON.stringify(result, null, 2));
 
         return {
             sucesso: true,
