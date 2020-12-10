@@ -19,6 +19,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.9",
+    "@types/faker": "^5.1.5",
     "@types/jest": "^26.0.17",
     "@types/module-alias": "^2.0.0",
     "@types/mongodb": "^3.6.3",
@@ -48,6 +49,7 @@
     "@overnightjs/core": "^1.7.5",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "faker": "^5.1.0",
     "module-alias": "^2.2.2",
     "mongodb": "^3.6.3",
     "tslog": "^3.0.1"
