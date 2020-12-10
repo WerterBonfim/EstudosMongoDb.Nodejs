@@ -34,8 +34,7 @@ export class RegistroRepository {
             .collection("registros")
             .insertOne(registro);
 
-        logger.info("Registro inserido com sucesso");
-        //logger.info("Inseriu um registro", JSON.stringify(result, null, 2));
+        logger.info("Inseriu um registro", JSON.stringify(result, null, 2));
 
         return {
             sucesso: true,
