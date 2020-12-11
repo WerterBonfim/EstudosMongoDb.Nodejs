@@ -1,34 +1,17 @@
-import { json } from "body-parser";
-import { EROFS } from "constants";
-import e from "express";
-import { MongoClient } from "mongodb";
-
 import logger from "@src/configurations/logging-config";
+import { SuporteDb } from "@src/suporte/suporte-db";
 import { IResposta } from "@src/view-model/resposta";
 
-export class RegistroRepository {
-    private readonly _connectionString: string;
-    private readonly _mongoClient: MongoClient;
-
+export class RegistroRepository extends SuporteDb {
     constructor() {
-        this._connectionString = "mongodb://mongo:!123Senha@localhost/admin";
-        this._mongoClient = new MongoClient(this._connectionString, {
-            useUnifiedTopology: true,
-            connectTimeoutMS: 2000,
-        });
-    }
-
-    private async TentaConectar(): Promise<void> {
-        if (this._mongoClient && this._mongoClient.isConnected()) return;
-        this._mongoClient.connect();
+        super();
     }
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     public async InserirRegistro(registro: unknown): Promise<IResposta> {
         await this.TentaConectar();
 
-        const result = await this._mongoClient
-            .db("from-node")
+        const result = await this.Client.db("from-node")
             .collection("registros")
             .insertOne(registro);
 
@@ -47,8 +30,7 @@ export class RegistroRepository {
         try {
             await this.TentaConectar();
 
-            const result = await this._mongoClient
-                .db("from-node")
+            const result = await this.Client.db("from-node")
                 .collection("registros")
                 .insertMany(registros);
 
